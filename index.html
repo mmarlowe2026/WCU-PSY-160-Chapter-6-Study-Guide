@@ -1,0 +1,2685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Chapter 6 memory study guide with comparison tables, retrieval flashcards, and original practice questions.">
+<title>Chapter 6: Memory</title>
+
+<style>
+:root{
+  --ink:#193b3b;
+  --green:#17685b;
+  --light:#eaf4ef;
+  --border:#cadbd3;
+  --background:#f5f6f1;
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:20px;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  color:var(--ink);
+  background:var(--background);
+}
+
+a{color:var(--green)}
+
+header{
+  background:#193f3b;
+  color:white;
+  padding:45px 24px;
+}
+
+header>div{
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  font-size:clamp(32px,5vw,48px);
+  line-height:1.15;
+  margin:12px 0;
+}
+
+header p{
+  max-width:750px;
+  color:#e1eee7;
+}
+
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:13px;
+}
+
+.layout{
+  max-width:1200px;
+  margin:30px auto;
+  padding:0 20px;
+  display:grid;
+  grid-template-columns:230px minmax(0,1fr);
+  gap:28px;
+}
+
+aside{
+  position:sticky;
+  top:20px;
+  align-self:start;
+  max-height:92vh;
+  overflow:auto;
+}
+
+nav a{
+  display:block;
+  padding:7px 10px;
+  color:var(--green);
+  text-decoration:none;
+  border-radius:6px;
+  font-size:14px;
+}
+
+nav a:hover{background:var(--light)}
+
+main{min-width:0}
+
+section{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:28px;
+  margin-bottom:24px;
+}
+
+h2{
+  font-size:26px;
+  line-height:1.25;
+  margin-top:0;
+}
+
+h3{
+  font-size:20px;
+  margin-top:25px;
+}
+
+.callout{
+  background:var(--light);
+  border-left:5px solid var(--green);
+  padding:16px 20px;
+  border-radius:6px;
+  margin:20px 0;
+}
+
+.callout.warning{
+  background:#f2f6ed;
+  border-left-color:#687b42;
+}
+
+.table-wrap{overflow-x:auto}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  font-size:15px;
+  margin:18px 0;
+}
+
+th,td{
+  border-bottom:1px solid var(--border);
+  text-align:left;
+  vertical-align:top;
+  padding:12px;
+}
+
+th{background:var(--light)}
+tr:nth-child(even){background:#f8faf8}
+
+button,select{
+  font:inherit;
+  padding:10px 15px;
+  border:1px solid #8cac9c;
+  border-radius:8px;
+  color:var(--ink);
+  background:white;
+}
+
+button{cursor:pointer}
+
+button.primary{
+  background:var(--green);
+  color:white;
+}
+
+button:hover{filter:brightness(.95)}
+
+button:disabled{
+  opacity:.5;
+  cursor:default;
+}
+
+.tools{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.small{
+  font-size:14px;
+  color:#536b64;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+details{
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:14px;
+}
+
+section>details{margin:14px 0}
+
+summary{
+  font-weight:bold;
+  cursor:pointer;
+}
+
+fieldset{
+  margin:24px 0;
+  padding:18px;
+  border:1px solid var(--border);
+  border-radius:10px;
+  min-width:0;
+}
+
+legend{
+  font-weight:bold;
+  max-width:100%;
+  padding:0 7px;
+}
+
+.option{
+  display:flex;
+  gap:12px;
+  align-items:baseline;
+  background:#f4f7f3;
+  padding:10px;
+  margin:7px 0;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.option input{flex:none}
+
+.correct-choice{
+  outline:2px solid var(--green);
+}
+
+.incorrect-choice{
+  outline:2px solid #aa402a;
+}
+
+.feedback{
+  background:var(--light);
+  border-left:4px solid var(--green);
+  padding:12px;
+  margin-top:15px;
+}
+
+.feedback.incorrect{
+  background:#fff0e8;
+  border-color:#aa402a;
+}
+
+.results{
+  background:var(--light);
+  padding:20px;
+  border-radius:10px;
+  margin:20px 0;
+}
+
+.topic-score{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:7px 0;
+  border-bottom:1px solid #bfd1c6;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+:focus-visible{
+  outline:3px solid #ba5c22;
+  outline-offset:4px;
+}
+
+[hidden]{display:none!important}
+
+.skip{
+  position:absolute;
+  left:-10000px;
+}
+
+.skip:focus{
+  left:10px;
+  top:10px;
+  background:white;
+  padding:10px;
+  z-index:10;
+}
+
+@media(max-width:850px){
+  .layout{grid-template-columns:1fr}
+  aside{position:static;max-height:none}
+  nav{columns:2}
+}
+
+@media(max-width:500px){
+  section{padding:20px}
+  .layout{padding:0 12px}
+  .cards{grid-template-columns:1fr}
+  nav{columns:1}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+}
+
+@media print{
+  body{
+    background:white;
+    color:black;
+    font-size:11pt;
+  }
+
+  header{
+    background:white;
+    color:black;
+    padding:0;
+  }
+
+  header p{color:black}
+
+  aside,
+  .noprint,
+  #flashcards,
+  #practice,
+  footer{
+    display:none!important;
+  }
+
+  .layout{
+    display:block;
+    padding:0;
+    margin:0;
+  }
+
+  section{
+    border:0;
+    padding:0;
+    margin:20px 0;
+  }
+
+  h2,h3{break-after:avoid}
+  tr{break-inside:avoid}
+  .table-wrap{overflow:visible}
+}
+</style>
+</head>
+
+<body>
+
+<a class="skip" href="#main">Skip to study guide</a>
+
+<header>
+  <div>
+    <div class="eyebrow">Dr. Misty Marlowe • Chapter 6</div>
+    <h1>Memory</h1>
+    <p>
+      Understand the concepts. Tell similar ideas apart.
+      Practice applying what you know to a new situation.
+    </p>
+    <p>
+      12 concept sections • 24 retrieval cards •
+      <span id="questionCount">72</span> practice questions
+    </p>
+  </div>
+</header>
+
+<div class="layout">
+
+<aside>
+  <strong>Your study pathway</strong>
+
+  <nav aria-label="Study guide navigation">
+    <a href="#start">How to use this guide</a>
+    <a href="#processes">1. Encoding, storage, and retrieval</a>
+    <a href="#stores">2. The three-stage model</a>
+    <a href="#working">3. Chunking, rehearsal, and working memory</a>
+    <a href="#serial">4. Primacy, recency, and serial position</a>
+    <a href="#types">5. Types of long-term memory</a>
+    <a href="#retrieval">6. Retrieval, cues, and memory tasks</a>
+    <a href="#processing">7. Depth of processing and priming</a>
+    <a href="#brain">8. The biology of memory</a>
+    <a href="#reconstruction">9. Reconstructive and autobiographical memory</a>
+    <a href="#eyewitness">10. Eyewitness memory, recovered memories, and culture</a>
+    <a href="#forgetting">11. Why we forget</a>
+    <a href="#disorders">12. Amnesia and memory disorders</a>
+    <a href="#checklist">Final retrieval checklist</a>
+    <a href="#flashcards">Retrieval flashcards</a>
+    <a href="#practice">Practice quiz</a>
+  </nav>
+
+  <button type="button" id="printButton">Print study guide</button>
+</aside>
+
+<main id="main">
+
+<section id="start">
+  <h2>How to use this guide</h2>
+
+  <p>
+    This guide follows the concepts in your Chapter 6 test-bank topics.
+    Learn to identify a memory process from a new example, not just
+    recognize a familiar definition.
+  </p>
+
+  <ol>
+    <li>Study one section, then explain it without looking.</li>
+    <li>Create your own example for each comparison.</li>
+    <li>Recreate the memory-system and interference tables from memory.</li>
+    <li>Take the practice quiz without notes.</li>
+    <li>Read every explanation, including answers you guessed correctly.</li>
+    <li>Return the next day and retry missed concepts.</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Read → recall → apply → review.</strong>
+    Familiarity is not the same as being able to produce an answer.
+    Practice scores identify study needs; they do not guarantee an exam score.
+  </div>
+
+  <p>
+    <strong>Key question:</strong>
+    “Is this example about getting information in, keeping it,
+    using it, or getting it back?”
+  </p>
+</section>
+
+<section id="processes">
+  <h2>1. Encoding, storage, and retrieval</h2>
+
+  <p>
+    <strong>Memory</strong> is the set of processes through which we
+    encode, store, and retrieve information.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Process</th>
+          <th scope="col">Meaning</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Encoding</td>
+          <td>Transforming incoming information into a form that can be represented in memory.</td>
+          <td>Paying attention to a new name and connecting it to a familiar person.</td>
+        </tr>
+        <tr>
+          <td>Storage</td>
+          <td>Retaining information over time.</td>
+          <td>Information remains available between learning and a later test.</td>
+        </tr>
+        <tr>
+          <td>Retrieval</td>
+          <td>Accessing stored information.</td>
+          <td>Bringing a previously learned name to mind.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Encode → store → retrieve.</strong><br>
+    Encoding = get it in. Storage = retain it. Retrieval = get it back.
+  </div>
+
+  <h3>Failure can happen at different points</h3>
+
+  <p>
+    If you never attended to the details of a coin or passing license plate,
+    the best explanation may be <strong>encoding failure</strong>.
+    Seeing something repeatedly does not guarantee that you encoded every detail.
+  </p>
+
+  <p>
+    If you know a name but cannot access it right now, the problem may be
+    <strong>retrieval</strong>. A failed attempt to remember does not,
+    by itself, prove the information is gone.
+  </p>
+
+  <details>
+    <summary>Check yourself: Reading a name, retaining it overnight, and producing it the next day involve which processes?</summary>
+    <p>Encoding, storage, and retrieval, respectively.</p>
+  </details>
+</section>
+
+<section id="stores">
+  <h2>2. The three-stage model</h2>
+
+  <p>
+    The bank uses the traditional sequence
+    <strong>sensory memory → short-term memory → long-term memory</strong>.
+    This is a useful model, not a claim that all memory operates as a
+    single one-way conveyor belt.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Store</th>
+          <th scope="col">Main features</th>
+          <th scope="col">Recognition clue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sensory memory</td>
+          <td>Very brief retention of relatively detailed sensory information. Most unattended information disappears quickly.</td>
+          <td>A fleeting visual or auditory trace.</td>
+        </tr>
+        <tr>
+          <td>Short-term memory</td>
+          <td>Limited-capacity, brief retention of information currently available for use.</td>
+          <td>Holding a new number long enough to dial it.</td>
+        </tr>
+        <tr>
+          <td>Long-term memory</td>
+          <td>Large-capacity retention over extended periods; retrieval is not always easy.</td>
+          <td>Facts, skills, and experiences retained beyond the immediate moment.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Iconic vs. echoic</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Modality</th>
+          <th scope="col">Memory cue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Iconic memory</td>
+          <td>Visual sensory information.</td>
+          <td>Icon = image.</td>
+        </tr>
+        <tr>
+          <td>Echoic memory</td>
+          <td>Auditory sensory information.</td>
+          <td>Echo = sound.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Sensory memory can briefly preserve considerable detail, but that does
+    not mean the trace will become a lasting, meaningful memory.
+    Attention helps selected information enter further processing.
+  </p>
+
+  <div class="callout">
+    <strong>Bank-specific numbers:</strong>
+    The supplied questions use approximately <strong>seven items</strong>
+    for a traditional immediate digit-span example and
+    <strong>15–25 seconds</strong> for unrehearsed short-term retention.
+    Learn those as the chapter’s introductory estimates, not universal limits.
+    Capacity and duration depend on the task, chunking, attention, and interference.
+  </div>
+
+  <p>
+    The bank describes short-term memory as the stage at which information
+    first has meaning. Use that contrast with a fleeting sensory trace;
+    contemporary accounts describe more interaction among attention,
+    perception, and memory.
+  </p>
+
+  <details>
+    <summary>Check yourself: A brief trace of a sound is iconic or echoic?</summary>
+    <p>Echoic. Iconic refers to visual sensory memory.</p>
+  </details>
+</section>
+
+<section id="working">
+  <h2>3. Chunking, rehearsal, and working memory</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Concept</th>
+          <th scope="col">Definition</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Chunking</td>
+          <td>Grouping separate items into meaningful units.</td>
+          <td>Remembering 2, 0, 2, 6 as the familiar year 2026.</td>
+        </tr>
+        <tr>
+          <td>Maintenance rehearsal</td>
+          <td>Repeating information to keep it active.</td>
+          <td>Repeating a code until you enter it.</td>
+        </tr>
+        <tr>
+          <td>Elaborative rehearsal</td>
+          <td>Organizing information and connecting it to meaning or prior knowledge.</td>
+          <td>Explaining how a new term relates to a familiar experience.</td>
+        </tr>
+        <tr>
+          <td>Working memory</td>
+          <td>Temporarily holding and actively manipulating information.</td>
+          <td>Keeping intermediate totals in mind during mental arithmetic.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Short-term retention = hold it.</strong><br>
+    <strong>Working memory = hold it and work with it.</strong><br>
+    <strong>Chunking = group it.</strong><br>
+    <strong>Elaboration = connect it.</strong>
+  </div>
+
+  <h3>One task can use multiple systems</h3>
+
+  <p>
+    While multiplying mentally, your intermediate numbers are in
+    <strong>working memory</strong>. Multiplication facts you already know
+    are retrieved from <strong>long-term memory</strong>.
+  </p>
+
+  <p>
+    Repeating a number can maintain it briefly, but meaningful organization
+    is usually more useful for durable learning than repeating words
+    without understanding.
+  </p>
+
+  <h3>Attention and stress</h3>
+
+  <p>
+    Working memory uses limited cognitive resources.
+    A demanding conversation can compete with attention needed for driving
+    or another task. Stress can also reduce its effectiveness.
+  </p>
+
+  <p>
+    Chunking makes better use of limited capacity by changing the unit
+    being remembered; it does not make capacity unlimited.
+  </p>
+
+  <details>
+    <summary>Check yourself: Repeating a definition vs. explaining it with an example—what is the difference?</summary>
+    <p>
+      Repetition illustrates maintenance rehearsal.
+      Explaining meaning and linking an example illustrates elaborative rehearsal.
+    </p>
+  </details>
+</section>
+
+<section id="serial">
+  <h2>4. Primacy, recency, and serial position</h2>
+
+  <p>
+    In an immediate free-recall task, people often remember items at the
+    beginning and end of a list better than items in the middle.
+    This pattern is the <strong>serial-position effect</strong>.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Effect</th>
+          <th scope="col">What is remembered better?</th>
+          <th scope="col">Typical introductory explanation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Primacy</td>
+          <td>Early items in a list.</td>
+          <td>Early items often receive more rehearsal and support from longer-term retention.</td>
+        </tr>
+        <tr>
+          <td>Recency</td>
+          <td>Late items in a list.</td>
+          <td>Recent items can still be readily available at immediate recall.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Primacy = first.</strong><br>
+    <strong>Recency = recent / last.</strong><br>
+    The middle is often the weakest part in immediate list recall.
+  </div>
+
+  <p>
+    <strong>Example:</strong>
+    A shopping list begins with bread and apples and ends with soap and rice.
+    Remembering bread and apples especially well reflects primacy.
+    Remembering soap and rice especially well reflects recency.
+  </p>
+
+  <p>
+    These are patterns, not guarantees.
+    Delay, distraction, rehearsal, and task design can change them.
+    An intervening distraction commonly reduces an immediate recency advantage.
+  </p>
+
+  <details>
+    <summary>Check yourself: Remembering the first lines of a poem better than the middle reflects what?</summary>
+    <p>
+      Primacy. Better memory for its last lines at immediate recall
+      reflects recency.
+    </p>
+  </details>
+</section>
+
+<section id="types">
+  <h2>5. Types of long-term memory</h2>
+
+  <p>
+    Long-term memory includes multiple distinguishable forms.
+    They interact, but remembering a fact is not the same task as
+    performing a practiced skill.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Main meaning</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Explicit / declarative</td>
+          <td>Conscious recollection of facts and events.</td>
+          <td>Deliberately remembering a course concept.</td>
+        </tr>
+        <tr>
+          <td>Semantic</td>
+          <td>General knowledge, concepts, facts, and word meanings.</td>
+          <td>Knowing what “retrieval” means.</td>
+        </tr>
+        <tr>
+          <td>Episodic</td>
+          <td>Memory for personally experienced events with a particular context.</td>
+          <td>Remembering your first day of class.</td>
+        </tr>
+        <tr>
+          <td>Implicit / nondeclarative</td>
+          <td>Past experience influences performance without requiring conscious recollection of that experience.</td>
+          <td>A practiced skill or a priming effect.</td>
+        </tr>
+        <tr>
+          <td>Procedural</td>
+          <td>Memory expressed through learned skills and procedures.</td>
+          <td>Playing a familiar guitar passage.</td>
+        </tr>
+        <tr>
+          <td>Autobiographical</td>
+          <td>Memory about one’s own life, including personal experiences and personal knowledge.</td>
+          <td>Remembering a family holiday or facts about your childhood home.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Semantic = facts.</strong><br>
+    <strong>Episodic = episodes.</strong><br>
+    <strong>Procedural = practiced procedures.</strong><br>
+    <strong>Autobiographical = your life.</strong>
+  </div>
+
+  <h3>Hierarchy to remember</h3>
+
+  <ul>
+    <li>
+      <strong>Declarative / explicit:</strong>
+      includes semantic and episodic memory.
+    </li>
+    <li>
+      <strong>Nondeclarative / implicit:</strong>
+      includes procedural skills, priming, and some conditioning effects.
+    </li>
+  </ul>
+
+  <p>
+    In this chapter, explicit and declarative are paired terms, as are
+    implicit and nondeclarative.
+    Procedural memory is one form of nondeclarative memory, not the whole category.
+  </p>
+
+  <p>
+    A personal event can be both episodic and autobiographical.
+    Identify the distinction the question is asking about rather than
+    assuming the categories never overlap.
+  </p>
+
+  <details>
+    <summary>Check yourself: Knowing the rules of a game vs. executing a practiced serve?</summary>
+    <p>
+      Knowing the rules is semantic/declarative knowledge.
+      Performing the practiced serve expresses procedural memory.
+    </p>
+  </details>
+</section>
+
+<section id="retrieval">
+  <h2>6. Retrieval, cues, and memory tasks</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Concept</th>
+          <th scope="col">Meaning</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Retrieval cue</td>
+          <td>A stimulus or context that helps access stored information.</td>
+          <td>A song brings back an earlier trip.</td>
+        </tr>
+        <tr>
+          <td>Recall</td>
+          <td>Producing information rather than selecting it from supplied alternatives.</td>
+          <td>Writing an essay answer or filling a blank without options.</td>
+        </tr>
+        <tr>
+          <td>Recognition</td>
+          <td>Identifying previously encountered information among presented material.</td>
+          <td>Selecting a learned definition from four choices.</td>
+        </tr>
+        <tr>
+          <td>Tip-of-the-tongue phenomenon</td>
+          <td>A temporary inability to retrieve information accompanied by a feeling of knowing it.</td>
+          <td>Knowing a name starts with M but not accessing the full name.</td>
+        </tr>
+        <tr>
+          <td>Spreading activation</td>
+          <td>Activation of one concept facilitates activation of related concepts in an associative network.</td>
+          <td>Thinking of a beach brings sand, waves, and summer to mind.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Recall = produce.</strong><br>
+    <strong>Recognition = identify.</strong><br>
+    <strong>Tip of the tongue = access problem.</strong>
+  </div>
+
+  <p>
+    A typical multiple-choice question involves <strong>recognition</strong>
+    and <strong>explicit memory</strong>: you intentionally identify the
+    learned answer. An essay or a fill-in-the-blank item without options
+    requires recall.
+  </p>
+
+  <p>
+    Recognition often supplies more cues than free recall, but it is not
+    error-free. Familiar-looking distractors can still be wrong.
+  </p>
+
+  <h3>Semantic networks</h3>
+
+  <p>
+    Knowledge can be represented as interconnected concepts.
+    In <strong>spreading activation</strong>, thinking about one concept
+    activates related information. This helps explain why one memory can
+    bring others to mind.
+  </p>
+
+  <details>
+    <summary>Check yourself: A familiar smell helps you remember a visit. What is the smell doing?</summary>
+    <p>It is acting as a retrieval cue.</p>
+  </details>
+</section>
+
+<section id="processing">
+  <h2>7. Depth of processing and priming</h2>
+
+  <h3>Levels of processing</h3>
+
+  <p>
+    The <strong>levels-of-processing approach</strong> emphasizes how
+    information is mentally analyzed.
+    Attending to meaning and connecting information with existing knowledge
+    generally produces more durable retention than focusing only on
+    surface features.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Processing emphasis</th>
+          <th scope="col">Example</th>
+          <th scope="col">Study implication</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Shallow / surface</td>
+          <td>Noticing the font, capitalization, or color of a word.</td>
+          <td>Appearance alone is a weak basis for understanding.</td>
+        </tr>
+        <tr>
+          <td>Sound-based</td>
+          <td>Considering how a word sounds or whether it rhymes.</td>
+          <td>Sound can be useful, but it is different from explaining meaning.</td>
+        </tr>
+        <tr>
+          <td>Meaning-based / deeper</td>
+          <td>Explaining a concept and relating it to a known situation.</td>
+          <td>Generate examples, comparisons, and explanations.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Do more than highlight:</strong>
+    explain why an answer is correct, connect it to prior knowledge,
+    and create a new example.
+  </div>
+
+  <h3>Priming</h3>
+
+  <p>
+    <strong>Priming</strong> occurs when previous exposure influences
+    later processing or performance.
+    A related word may become easier to identify without conscious
+    recollection of the earlier exposure.
+  </p>
+
+  <p>
+    <strong>Spreading activation</strong> describes activation moving through
+    a network; <strong>priming</strong> describes an influence of previous
+    exposure on later performance.
+    The concepts are related, but the terms are not interchangeable
+    in every question.
+  </p>
+
+  <h3>Implicit influences</h3>
+
+  <p>
+    Some conditioned responses and automatic associations can operate
+    without deliberate recollection.
+    The bank connects implicit associations to prejudice and discrimination.
+    Do not assume that every implicit association determines someone’s
+    conscious beliefs or behavior.
+  </p>
+
+  <details>
+    <summary>Check yourself: Which is deeper—counting letters in “consolidation” or explaining it using an example?</summary>
+    <p>Explaining its meaning with an example is deeper, meaning-based processing.</p>
+  </details>
+</section>
+
+<section id="brain">
+  <h2>8. The biology of memory</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Term or structure</th>
+          <th scope="col">What to remember</th>
+          <th scope="col">Avoid this confusion</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hippocampus</td>
+          <td>Important for forming and consolidating new declarative memories; also involved in spatial memory.</td>
+          <td>It is not the permanent storage location of all memories.</td>
+        </tr>
+        <tr>
+          <td>Amygdala</td>
+          <td>Contributes to emotional significance and emotional learning; can influence memory for emotional events.</td>
+          <td>It is not a complete storage center for every emotional experience.</td>
+        </tr>
+        <tr>
+          <td>Consolidation</td>
+          <td>Processes through which memories become more stable over time.</td>
+          <td>Stability does not mean memories become permanently unchangeable.</td>
+        </tr>
+        <tr>
+          <td>Long-term potentiation: LTP</td>
+          <td>A lasting increase in synaptic effectiveness following particular patterns of activity.</td>
+          <td>It is not simply a synonym for storing a memory or growing new neurons.</td>
+        </tr>
+        <tr>
+          <td>Engram</td>
+          <td>The physical representation or trace of a memory in neural systems.</td>
+          <td>It is not the name of one anatomical organ.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Consolidation = stabilize.</strong><br>
+    <strong>LTP = strengthen synaptic effectiveness.</strong><br>
+    <strong>Engram = physical memory trace.</strong>
+  </div>
+
+  <p>
+    An emotionally significant event can involve both the hippocampus and
+    amygdala. A later reminder may reactivate associated emotional and
+    contextual information.
+  </p>
+
+  <p>
+    The bank’s London taxi-driver example connects spatial experience
+    with hippocampal differences.
+    It supports studying the relationship between experience and brain
+    organization; it does not mean every association by itself proves a
+    simple causal explanation.
+  </p>
+
+  <details>
+    <summary>Check yourself: A pathway responds more effectively after repeated activation. Which term fits?</summary>
+    <p>
+      Long-term potentiation.
+      Consolidation refers more broadly to stabilization of memories.
+    </p>
+  </details>
+</section>
+
+<section id="reconstruction">
+  <h2>9. Reconstructive and autobiographical memory</h2>
+
+  <p>
+    Remembering is a <strong>constructive process</strong>:
+    stored information is combined with interpretation, current knowledge,
+    and other available information. Memory is not a perfect recording.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Concept</th>
+          <th scope="col">Meaning</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Schema</td>
+          <td>An organized framework of knowledge about a situation or category.</td>
+          <td>Expecting a lecture to involve students, notes, and questions.</td>
+        </tr>
+        <tr>
+          <td>Constructive processing</td>
+          <td>The meaning assigned to events influences how they are remembered.</td>
+          <td>Remembering a routine detail that fits expectations even though it was absent.</td>
+        </tr>
+        <tr>
+          <td>Source amnesia</td>
+          <td>Remembering information but forgetting where it came from.</td>
+          <td>Knowing about an event but forgetting whether you heard it from a friend or a podcast.</td>
+        </tr>
+        <tr>
+          <td>Flashbulb memory</td>
+          <td>A vivid memory of the circumstances in which one learned about a surprising or significant event.</td>
+          <td>Remembering where you were when you heard major news.</td>
+        </tr>
+        <tr>
+          <td>Autobiographical memory</td>
+          <td>Memory about your own life; it is selective and reconstructive.</td>
+          <td>Recounting a childhood family celebration.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Vividness and confidence do not guarantee accuracy.</strong>
+    Flashbulb memories can feel exceptionally clear while containing
+    incorrect details.
+  </div>
+
+  <p>
+    Schemas help organize and interpret information, but they can also
+    bias encoding and recall. They do not guarantee accurate detail.
+  </p>
+
+  <p>
+    Different periods of a person’s life are not equally accessible.
+    Autobiographical memories can change with current interpretations
+    and later information.
+  </p>
+
+  <details>
+    <summary>Check yourself: Remembering the news but not who told you illustrates what?</summary>
+    <p>
+      Source amnesia.
+      The information is remembered, but its source is not.
+    </p>
+  </details>
+</section>
+
+<section id="eyewitness">
+  <h2>10. Eyewitness memory, recovered memories, and culture</h2>
+
+  <h3>Leading questions and misinformation</h3>
+
+  <p>
+    In the <strong>Loftus and Palmer</strong> research described by the bank,
+    changing the wording used to describe a vehicle collision influenced
+    participants’ responses.
+    The central lesson is that <strong>leading questions and post-event
+    information can influence memory reports</strong>.
+  </p>
+
+  <p>
+    A memory report should not be treated as a literal recording simply
+    because it is detailed or confidently expressed.
+  </p>
+
+  <h3>Repressed or recovered memories</h3>
+
+  <p>
+    The bank uses <strong>repression</strong> for the proposed process of
+    pushing a distressing memory out of awareness.
+    A later recollection alone does not establish that repression caused
+    the earlier lack of recall or that every recalled detail is accurate.
+  </p>
+
+  <div class="callout warning">
+    <strong>Central challenge:</strong>
+    distinguishing accurate recollection from error or suggestion.
+    Do not assume that all recovered memories are true, or that all are false.
+    Independent evidence matters.
+  </div>
+
+  <h3>Culture and remembering</h3>
+
+  <p>
+    Cultural practices can shape what people attend to, how they organize
+    experience, and which learning or remembering strategies they use.
+    Do not confuse different strategies or task experience with a simple
+    ranking of cultures by memory ability.
+  </p>
+
+  <p>
+    The bank treats the relationship between written language and general
+    recall ability as inconclusive rather than as proof that writing
+    automatically increases or decreases memory.
+  </p>
+
+  <details>
+    <summary>Check yourself: Does the word “smashed” in a question leave a witness’s report completely unchanged?</summary>
+    <p>
+      No. The research example illustrates how wording can influence
+      judgments and later reports.
+    </p>
+  </details>
+</section>
+
+<section id="forgetting">
+  <h2>11. Why we forget</h2>
+
+  <p>
+    Forgetting can reduce the influence of irrelevant information,
+    but forgetting has multiple causes.
+    Identify which mechanism the scenario actually supports.
+  </p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Explanation</th>
+          <th scope="col">Meaning</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Encoding failure</td>
+          <td>Information was never adequately encoded.</td>
+          <td>You cannot describe an unattended license plate.</td>
+        </tr>
+        <tr>
+          <td>Decay</td>
+          <td>Memory traces weaken over time in the theoretical account.</td>
+          <td>A trace becomes less accessible with time; time alone does not rule out other causes.</td>
+        </tr>
+        <tr>
+          <td>Interference</td>
+          <td>Other learned information disrupts learning or retrieval.</td>
+          <td>Competing phone numbers come to mind.</td>
+        </tr>
+        <tr>
+          <td>Cue-dependent forgetting</td>
+          <td>Stored information is difficult to access without useful cues.</td>
+          <td>A name returns when someone gives its first syllable.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Ebbinghaus and the forgetting curve</h3>
+
+  <p>
+    <strong>Hermann Ebbinghaus</strong> conducted early systematic research
+    on forgetting.
+    The classic curve shows <strong>relatively rapid initial forgetting
+    followed by a slower rate of loss</strong>, rather than an equal
+    amount lost each hour.
+  </p>
+
+  <p>
+    The exact curve depends on material, learning conditions, and the test.
+    His findings do not mean every reader forgets a fixed proportion
+    of a meaningful text.
+  </p>
+
+  <h3>Proactive vs. retroactive interference</h3>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Direction</th>
+          <th scope="col">Example</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Proactive interference</td>
+          <td>Old information interferes with new information.</td>
+          <td>Your old password keeps coming to mind when you try to recall the new one.</td>
+        </tr>
+        <tr>
+          <td>Retroactive interference</td>
+          <td>New information interferes with old information.</td>
+          <td>After learning a new password, you struggle to recall the old one.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Proactive: old → new.</strong><br>
+    <strong>Retroactive: new → old.</strong><br>
+    Ask which information is doing the interfering—not just which
+    information is forgotten.
+  </div>
+
+  <p>
+    Proactive and retroactive are <strong>interference</strong> terms.
+    Anterograde and retrograde are <strong>amnesia</strong> terms.
+    Keep these two pairs separate.
+  </p>
+
+  <details>
+    <summary>Check yourself: A new address makes an older address harder to remember. Which interference?</summary>
+    <p>
+      Retroactive: newer information disrupts retrieval of older information.
+    </p>
+  </details>
+</section>
+
+<section id="disorders">
+  <h2>12. Amnesia and memory disorders</h2>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Term</th>
+          <th scope="col">Main distinction</th>
+          <th scope="col">Memory cue</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Retrograde amnesia</td>
+          <td>Loss of access to memories from before the onset of injury or illness.</td>
+          <td>Retro = looking backward.</td>
+        </tr>
+        <tr>
+          <td>Anterograde amnesia</td>
+          <td>Difficulty forming lasting new memories after onset.</td>
+          <td>Antero = moving forward.</td>
+        </tr>
+        <tr>
+          <td>Alzheimer’s disease</td>
+          <td>A progressive brain disease affecting memory and other cognitive abilities; not a normal consequence of aging.</td>
+          <td>Progressive changes in memory and cognition.</td>
+        </tr>
+        <tr>
+          <td>Korsakoff’s syndrome</td>
+          <td>A severe memory disorder associated with thiamine deficiency, often in the context of chronic alcohol misuse.</td>
+          <td>Thiamine, alcohol history, and major memory impairment.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="callout">
+    <strong>Retrograde = before onset.</strong><br>
+    <strong>Anterograde = new memory formation after onset.</strong><br>
+    These describe memory patterns; they do not identify a cause by themselves.
+  </div>
+
+  <p>
+    In some amnesic conditions, forming new declarative memories is impaired
+    while certain practiced skills remain available.
+    This helps show that memory includes distinguishable systems.
+  </p>
+
+  <p>
+    The bank emphasizes early forgetfulness in Alzheimer’s disease and asks
+    about broader language and problem-solving changes.
+    Occasional forgetting alone does not establish that diagnosis.
+  </p>
+
+  <p>
+    Korsakoff’s syndrome is not simply “forgetting because of age.”
+    Thiamine deficiency is central; chronic alcohol misuse is a common
+    context, but not the only one.
+    Memory difficulties can coexist with other cognitive or behavioral changes.
+  </p>
+
+  <p class="small">
+    These are educational distinctions, not instructions for diagnosing
+    a real person from a short scenario.
+  </p>
+
+  <details>
+    <summary>Check yourself: Which term concerns difficulty forming lasting memories after an injury?</summary>
+    <p>
+      Anterograde amnesia.
+      Loss of pre-injury memories is retrograde amnesia.
+    </p>
+  </details>
+</section>
+
+<section id="checklist">
+  <h2>Final retrieval checklist</h2>
+
+  <p>Without notes, can you:</p>
+
+  <ul>
+    <li>Separate encoding, storage, and retrieval?</li>
+    <li>Order the traditional memory stores and distinguish iconic from echoic memory?</li>
+    <li>Explain chunking, maintenance rehearsal, elaborative rehearsal, and working memory?</li>
+    <li>Identify primacy and recency from list positions?</li>
+    <li>Classify semantic, episodic, procedural, explicit, implicit, and autobiographical examples?</li>
+    <li>Separate recall from recognition and identify retrieval cues?</li>
+    <li>Explain tip-of-the-tongue experiences and spreading activation?</li>
+    <li>Apply levels of processing and distinguish priming from deliberate recollection?</li>
+    <li>Separate consolidation, LTP, and engram?</li>
+    <li>Explain hippocampal and amygdala contributions to memory?</li>
+    <li>Identify schemas, source amnesia, and flashbulb memories?</li>
+    <li>Explain why vividness does not establish accuracy?</li>
+    <li>Describe leading-question effects and the challenge of evaluating recovered memories?</li>
+    <li>Explain encoding failure, decay, interference, and cue-dependent forgetting?</li>
+    <li>State the direction of proactive and retroactive interference?</li>
+    <li>Distinguish retrograde from anterograde amnesia?</li>
+  </ul>
+
+  <h3>A short study schedule</h3>
+
+  <p>
+    <strong>Session 1:</strong>
+    Sections 1–5. Recreate the memory stores and memory-type tables.
+  </p>
+
+  <p>
+    <strong>Session 2:</strong>
+    Sections 6–10. Practice retrieval, brain mechanisms,
+    and memory-accuracy examples.
+  </p>
+
+  <p>
+    <strong>Session 3:</strong>
+    Sections 11–12. Explain interference and amnesia using your own examples,
+    then take the quiz.
+  </p>
+
+  <p>
+    <strong>Next day:</strong>
+    Retry missed concepts and explain the final checklist aloud.
+  </p>
+</section>
+
+<section id="flashcards">
+  <h2>Retrieval flashcards</h2>
+  <p>
+    Say your answer before opening each card.
+    Close the card and explain the concept again in your own words.
+  </p>
+  <div class="cards" id="cardContainer"></div>
+</section>
+
+<section id="practice">
+  <h2>Practice quiz</h2>
+
+  <p>
+    Complete all questions or select a topic.
+    Questions and answer choices shuffle with each new attempt.
+    Explanations appear after grading.
+  </p>
+
+  <div class="tools">
+    <label for="topic">Topic:</label>
+    <select id="topic">
+      <option value="all">All topics</option>
+    </select>
+    <button type="button" id="startButton">Start new attempt</button>
+  </div>
+
+  <p class="small">
+    Starting a new attempt clears current answers.
+    Scores stay in your browser and are not submitted.
+    Reloading clears the session.
+  </p>
+
+  <p id="progress" role="status" aria-live="polite"></p>
+
+  <div
+    id="results"
+    class="results"
+    tabindex="-1"
+    hidden>
+  </div>
+
+  <form id="quizForm">
+    <div id="questionContainer"></div>
+
+    <div class="tools">
+      <button class="primary" type="submit" id="gradeButton">
+        Grade attempt
+      </button>
+      <button type="button" id="retryButton" hidden>
+        Retry missed questions
+      </button>
+    </div>
+  </form>
+
+  <noscript>
+    <p>
+      Enable JavaScript for flashcards and practice questions.
+      The full study guide above remains readable without JavaScript.
+    </p>
+  </noscript>
+</section>
+
+<section id="sources">
+  <h2>Further reading</h2>
+
+  <p>
+    The guide and original practice questions follow the supplied
+    Chapter 6 bank. These sources offer additional context;
+    their chapter numbering may differ from your assigned textbook.
+  </p>
+
+  <ul>
+    <li>
+      <a href="https://openstax.org/books/psychology-2e/pages/8-1-how-memory-functions">
+        OpenStax: How Memory Functions
+      </a>
+    </li>
+    <li>
+      <a href="https://openstax.org/books/psychology-2e/pages/8-3-problems-with-memory">
+        OpenStax: Problems With Memory
+      </a>
+    </li>
+    <li>
+      <a href="https://www.nia.nih.gov/health/alzheimers-symptoms-and-diagnosis/do-memory-problems-always-mean-alzheimers-disease">
+        National Institute on Aging: Memory Problems, Forgetfulness, and Aging
+      </a>
+    </li>
+    <li>
+      <a href="https://www.niaaa.nih.gov/publications/brochures-and-fact-sheets/wernicke-korsakoff-syndrome">
+        NIAAA: Wernicke-Korsakoff Syndrome
+      </a>
+    </li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>
+  Original practice questions based on Chapter 6 topics.
+  Practice performance does not guarantee an exam score.
+</footer>
+
+<script>
+"use strict";
+
+/*
+Each question is added with:
+topic, prompt, correct answer, three distractors, explanation.
+
+Answer positions are balanced in the stored data.
+Questions and answer choices are shuffled again for each attempt.
+*/
+
+const questions = [];
+
+function addQuestion(
+  topic,
+  prompt,
+  correct,
+  distractor1,
+  distractor2,
+  distractor3,
+  explanation
+) {
+  const original = [
+    correct,
+    distractor1,
+    distractor2,
+    distractor3
+  ];
+
+  const answerIndex = questions.length % 4;
+
+  const options = answerIndex === 0
+    ? original
+    : original.slice(-answerIndex).concat(
+        original.slice(0, -answerIndex)
+      );
+
+  questions.push([
+    topic,
+    prompt,
+    options,
+    answerIndex,
+    explanation
+  ]);
+}
+
+/* Memory processes */
+
+addQuestion(
+  "Memory processes",
+  "Which sequence orders the three basic memory processes?",
+  "Encoding → storage → retrieval",
+  "Storage → encoding → retrieval",
+  "Retrieval → storage → encoding",
+  "Encoding → retrieval → storage",
+  "Encoding gets information into a representation, storage retains it, and retrieval accesses it."
+);
+
+addQuestion(
+  "Memory processes",
+  "A student gives a new term meaning by connecting it to a familiar example. Which process is emphasized?",
+  "Encoding",
+  "Retrieval",
+  "Retrograde amnesia",
+  "Source amnesia",
+  "The student is processing incoming material so it can be represented in memory."
+);
+
+addQuestion(
+  "Memory processes",
+  "Retaining learned information between Monday and a Friday test illustrates:",
+  "Storage",
+  "Recognition only",
+  "Priming only",
+  "Chunking only",
+  "Storage refers to retention over time. Accessing the information on Friday would be retrieval."
+);
+
+addQuestion(
+  "Memory processes",
+  "Bringing a previously learned name into awareness primarily involves:",
+  "Retrieval",
+  "Initial encoding",
+  "Sensory registration only",
+  "Neurogenesis",
+  "Retrieval accesses stored information; it is distinct from initial encoding."
+);
+
+/* Memory stores */
+
+addQuestion(
+  "Memory stores",
+  "Which order matches the traditional three-stage model?",
+  "Sensory → short-term → long-term",
+  "Long-term → sensory → short-term",
+  "Working → sensory → iconic",
+  "Short-term → long-term → sensory",
+  "The chapter presents sensory, short-term, and long-term stores in that sequence."
+);
+
+addQuestion(
+  "Memory stores",
+  "A fleeting visual trace most directly illustrates:",
+  "Iconic memory",
+  "Echoic memory",
+  "Procedural memory",
+  "Semantic memory",
+  "Iconic refers to visual sensory memory; echoic refers to auditory sensory memory."
+);
+
+addQuestion(
+  "Memory stores",
+  "A brief trace of a sound after it ends is an example of:",
+  "Echoic memory",
+  "Iconic memory",
+  "Procedural memory",
+  "Autobiographical memory",
+  "Echoic memory retains auditory sensory information briefly."
+);
+
+addQuestion(
+  "Memory stores",
+  "Which statement best characterizes sensory memory?",
+  "It briefly retains relatively detailed sensory information.",
+  "It is a permanent record of everything noticed.",
+  "It manipulates complex mental calculations.",
+  "It stores only consciously explained facts.",
+  "A sensory trace can preserve detail briefly, but it does not guarantee lasting retention."
+);
+
+addQuestion(
+  "Memory stores",
+  "For the traditional digit-span example used in this bank, the expected estimate is about:",
+  "Seven items",
+  "One item",
+  "Seventy items",
+  "An unlimited number of items",
+  "The bank uses the classic estimate of about seven. Actual capacity depends on the task and organization."
+);
+
+addQuestion(
+  "Memory stores",
+  "Why is a new number vulnerable to loss if you are interrupted before dialing?",
+  "Brief retention and competing information can disrupt it.",
+  "Sensory memory permanently prevents recall.",
+  "All numbers bypass short-term processing.",
+  "Interruption always causes retrograde amnesia.",
+  "Short-term information is vulnerable to distraction; the bank uses an approximate 15–25-second unrehearsed interval."
+);
+
+/* Working memory and rehearsal */
+
+addQuestion(
+  "Working memory and rehearsal",
+  "Grouping separate digits into familiar dates is an example of:",
+  "Chunking",
+  "Source amnesia",
+  "Decay",
+  "Retrograde amnesia",
+  "Chunking organizes individual items into meaningful units."
+);
+
+addQuestion(
+  "Working memory and rehearsal",
+  "Repeating a code until you enter it most directly illustrates:",
+  "Maintenance rehearsal",
+  "Elaborative rehearsal",
+  "Semantic-network expansion only",
+  "Consolidation by definition",
+  "Maintenance rehearsal repeats information to keep it active briefly."
+);
+
+addQuestion(
+  "Working memory and rehearsal",
+  "Explaining a term through an example from your life best illustrates:",
+  "Elaborative rehearsal",
+  "Pure maintenance rehearsal",
+  "Source amnesia",
+  "Iconic storage",
+  "Elaboration organizes and connects information with meaning and prior knowledge."
+);
+
+addQuestion(
+  "Working memory and rehearsal",
+  "Holding intermediate totals while doing arithmetic in your head requires:",
+  "Working memory",
+  "Echoic memory alone",
+  "Procedural memory alone",
+  "A flashbulb memory",
+  "Working memory temporarily holds and manipulates information."
+);
+
+addQuestion(
+  "Working memory and rehearsal",
+  "In mental multiplication, intermediate totals and familiar multiplication facts mainly draw on which systems, respectively?",
+  "Working memory; long-term memory",
+  "Sensory memory; iconic memory",
+  "Long-term memory; sensory memory",
+  "Procedural memory; echoic memory",
+  "Working memory handles the active calculation; established multiplication facts are retrieved from long-term memory."
+);
+
+addQuestion(
+  "Working memory and rehearsal",
+  "Why can a demanding conversation interfere with another complex task?",
+  "Both may compete for limited working-memory and attentional resources.",
+  "Long-term memory has room for only one fact.",
+  "Conversation eliminates all sensory input.",
+  "Talking necessarily causes an amnesic disorder.",
+  "Working memory is limited, and cognitive demands can compete. Stress can also reduce its effectiveness."
+);
+
+/* Serial position */
+
+addQuestion(
+  "Serial position",
+  "Especially good recall of the first few words of a list illustrates:",
+  "Primacy",
+  "Recency",
+  "Source amnesia",
+  "Retroactive interference by definition",
+  "Primacy is an early-list advantage, often associated with additional rehearsal."
+);
+
+addQuestion(
+  "Serial position",
+  "Especially good immediate recall of the last few words of a list illustrates:",
+  "Recency",
+  "Primacy",
+  "Neurogenesis",
+  "Source amnesia",
+  "Recency is a late-list advantage, especially in immediate recall."
+);
+
+addQuestion(
+  "Serial position",
+  "In a typical immediate list-recall task, which items are often recalled least well?",
+  "Items in the middle",
+  "The first item in every case",
+  "The last item in every case",
+  "All items are always recalled equally",
+  "The serial-position pattern often favors early and late items over the middle."
+);
+
+addQuestion(
+  "Serial position",
+  "A distracting task between the list and recall commonly reduces which immediate advantage?",
+  "Recency",
+  "The meaning of every semantic memory",
+  "All procedural memory",
+  "Source amnesia",
+  "A delay filled with competing activity can reduce immediate access to the final items."
+);
+
+/* Long-term memory types */
+
+addQuestion(
+  "Long-term memory types",
+  "Conscious recollection of facts and events is usually called:",
+  "Explicit or declarative memory",
+  "Iconic memory",
+  "Implicit memory only",
+  "A spinal reflex",
+  "Explicit/declarative memory involves conscious recollection; semantic and episodic memory are major forms."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Knowing that a triangle has three sides is an example of:",
+  "Semantic memory",
+  "Episodic memory",
+  "Procedural memory",
+  "Echoic memory",
+  "Semantic memory contains general facts and concepts."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Remembering the particular afternoon you first met a friend illustrates:",
+  "Episodic memory",
+  "Semantic memory only",
+  "Procedural memory",
+  "Iconic memory",
+  "Episodic memory concerns personally experienced events in a particular context."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Executing a practiced tennis serve most directly expresses:",
+  "Procedural memory",
+  "A flashbulb memory",
+  "Source amnesia",
+  "A purely semantic fact",
+  "Procedural memory is expressed through learned skills and procedures."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "A learned skill affects performance without requiring recollection of each practice session. This fits:",
+  "Implicit or nondeclarative memory",
+  "Explicit recollection only",
+  "Sensory memory only",
+  "Retrograde amnesia by definition",
+  "Implicit memory is expressed without requiring deliberate recollection of the learning episode."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Which grouping is accurate?",
+  "Semantic and episodic are forms of declarative memory.",
+  "Procedural memory is the only form of long-term memory.",
+  "Iconic and echoic are forms of autobiographical memory.",
+  "Semantic memory contains only motor skills.",
+  "Declarative memory includes facts and experiences, represented here by semantic and episodic memory."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Recounting your first holiday with a new partner is an example of:",
+  "Autobiographical memory",
+  "Echoic memory only",
+  "A motor procedure only",
+  "A sensory trace only",
+  "Autobiographical memory concerns your life; this personal event is also episodic."
+);
+
+addQuestion(
+  "Long-term memory types",
+  "Which statement about long-term memory is most accurate?",
+  "It includes multiple distinguishable forms with extensive capacity.",
+  "It is identical to sensory memory.",
+  "It contains only practiced movements.",
+  "Every stored item is always immediately accessible.",
+  "Long-term memory is broad and multifaceted; extensive storage does not guarantee easy retrieval."
+);
+
+/* Retrieval */
+
+addQuestion(
+  "Retrieval",
+  "An old song helps you remember a school trip. The song acts as a:",
+  "Retrieval cue",
+  "Proof of decay",
+  "New motor skill",
+  "Rehearsal loop only",
+  "A retrieval cue helps access associated stored information."
+);
+
+addQuestion(
+  "Retrieval",
+  "Writing an explanation without answer choices primarily tests:",
+  "Recall",
+  "Recognition",
+  "Iconic memory",
+  "Reuptake",
+  "Recall requires producing information rather than selecting it from supplied options."
+);
+
+addQuestion(
+  "Retrieval",
+  "Identifying a previously learned answer from several choices primarily tests:",
+  "Recognition",
+  "Free recall",
+  "Decay",
+  "Procedural conditioning only",
+  "Recognition involves identifying learned material among presented alternatives."
+);
+
+addQuestion(
+  "Retrieval",
+  "A standard multiple-choice question about a learned definition usually involves:",
+  "Recognition and explicit memory",
+  "Recall and implicit memory only",
+  "Procedural memory and iconic storage only",
+  "Source amnesia and decay",
+  "The student intentionally identifies information, making recognition and explicit memory the best pair."
+);
+
+addQuestion(
+  "Retrieval",
+  "You know an author’s name starts with R but cannot produce it. This is most consistent with:",
+  "A tip-of-the-tongue experience",
+  "Proof the name was never encoded",
+  "A new procedural skill",
+  "Retroactive amnesia",
+  "Tip-of-the-tongue experiences involve a feeling of knowing with temporary retrieval difficulty."
+);
+
+addQuestion(
+  "Retrieval",
+  "Thinking about a beach brings waves, sand, and summer to mind. Which process best fits?",
+  "Spreading activation",
+  "Decay",
+  "Anterograde amnesia",
+  "Simple digit rehearsal",
+  "Activation of one concept can facilitate related concepts in a semantic network."
+);
+
+/* Processing and priming */
+
+addQuestion(
+  "Processing and priming",
+  "Which activity most directly emphasizes deeper processing of a concept?",
+  "Explaining its meaning and connecting it to a known example",
+  "Counting its printed letters",
+  "Noticing only its font color",
+  "Checking whether it is capitalized",
+  "Meaning-based analysis and connections are central to deeper processing."
+);
+
+addQuestion(
+  "Processing and priming",
+  "Which example is most clearly surface-level processing?",
+  "Deciding whether a word is printed in uppercase",
+  "Explaining how a theory predicts behavior",
+  "Comparing two concepts by their meaning",
+  "Connecting a definition to a personal event",
+  "Attention to visual appearance alone is surface-level processing."
+);
+
+addQuestion(
+  "Processing and priming",
+  "Earlier exposure makes a related word easier to identify later without deliberate recollection. This illustrates:",
+  "Priming",
+  "Source amnesia",
+  "Retrograde amnesia",
+  "Maintenance rehearsal only",
+  "Priming is an influence of earlier exposure on later processing or performance."
+);
+
+addQuestion(
+  "Processing and priming",
+  "Why can some conditioning effects count as implicit memory?",
+  "They can influence responses without deliberate recollection of the learning episode.",
+  "They always require a conscious verbal explanation.",
+  "They are never learned from experience.",
+  "They are identical to remembering a life story.",
+  "Some learned responses can be expressed without conscious recollection, fitting implicit memory."
+);
+
+addQuestion(
+  "Processing and priming",
+  "Which study approach best combines elaboration and retrieval?",
+  "Explain a concept from memory, then check and correct your explanation.",
+  "Only highlight the same paragraph repeatedly.",
+  "Look at the page without attending to meaning.",
+  "Rely only on how familiar a term looks.",
+  "Producing an explanation practices retrieval, while examples and connections add meaningful processing."
+);
+
+/* Brain mechanisms */
+
+addQuestion(
+  "Brain mechanisms",
+  "Which structure is particularly important for forming new declarative memories?",
+  "Hippocampus",
+  "Primary motor cortex alone",
+  "Spinal cord alone",
+  "Pituitary gland",
+  "The hippocampus contributes to forming and consolidating new declarative memories, rather than storing all memories permanently."
+);
+
+addQuestion(
+  "Brain mechanisms",
+  "Which structure is especially relevant to emotional significance and emotional learning?",
+  "Amygdala",
+  "Corpus callosum only",
+  "Primary visual cortex only",
+  "Pituitary gland",
+  "The amygdala contributes to emotional learning and can influence memory for emotional events."
+);
+
+addQuestion(
+  "Brain mechanisms",
+  "The stabilization of a newly acquired memory over time is called:",
+  "Consolidation",
+  "Source amnesia",
+  "Primacy",
+  "Recognition",
+  "Consolidation refers to processes that make memories more stable, not permanently unchangeable."
+);
+
+addQuestion(
+  "Brain mechanisms",
+  "A lasting increase in synaptic effectiveness following particular patterns of activity is called:",
+  "Long-term potentiation",
+  "Source amnesia",
+  "Maintenance rehearsal",
+  "Retrograde interference",
+  "LTP concerns enduring changes in synaptic effectiveness and is a studied mechanism relevant to learning."
+);
+
+addQuestion(
+  "Brain mechanisms",
+  "The physical representation or trace of a memory is called an:",
+  "Engram",
+  "Echo",
+  "Episode only",
+  "Autonomic division",
+  "Engram refers to a physical memory representation, not a single named brain organ."
+);
+
+/* Constructive memory */
+
+addQuestion(
+  "Constructive memory",
+  "An organized framework of expectations about a familiar situation is a:",
+  "Schema",
+  "Refractory period",
+  "Retrograde deficit",
+  "Sensory modality",
+  "Schemas organize knowledge and guide interpretation but can also bias recall."
+);
+
+addQuestion(
+  "Constructive memory",
+  "A person remembers seeing a routine object because it fits expectations, even though it was absent. This illustrates:",
+  "Constructive processing influenced by a schema",
+  "A perfect sensory recording",
+  "Evidence that schemas eliminate error",
+  "A purely procedural skill",
+  "Remembering can incorporate expectations and meaning rather than reproduce every event exactly."
+);
+
+addQuestion(
+  "Constructive memory",
+  "You remember a claim but cannot remember whether you heard it from a friend or read it online. This is:",
+  "Source amnesia",
+  "Anterograde amnesia by definition",
+  "A motor skill",
+  "Echoic retention",
+  "Source amnesia concerns the origin of information, rather than total loss of its content."
+);
+
+addQuestion(
+  "Constructive memory",
+  "Vividly remembering where you were when you heard major surprising news is often called a:",
+  "Flashbulb memory",
+  "Procedural memory",
+  "Sensory trace only",
+  "Maintenance rehearsal",
+  "Flashbulb memories concern the circumstances of learning about a significant event."
+);
+
+addQuestion(
+  "Constructive memory",
+  "Which statement about a vivid flashbulb memory is most accurate?",
+  "It can contain errors despite strong confidence.",
+  "It must preserve every original detail.",
+  "It is always more accurate than all ordinary memories.",
+  "It cannot change over time.",
+  "Vividness and confidence do not guarantee accurate details."
+);
+
+addQuestion(
+  "Constructive memory",
+  "Which statement about autobiographical memory is most accurate?",
+  "It is selective and reconstructive, and some life periods are easier to recall.",
+  "Every life period is recalled with equal ease.",
+  "It is immune to later interpretation.",
+  "It contains only unconscious motor skills.",
+  "Autobiographical remembering is not a flawless recording and differs across events and life periods."
+);
+
+/* Eyewitness memory and context */
+
+addQuestion(
+  "Eyewitness memory and context",
+  "The collision-wording study associated with Loftus and Palmer illustrates that:",
+  "Leading questions can influence memory reports.",
+  "Wording never changes reported judgments.",
+  "Every confident witness is accurate.",
+  "Only children can be influenced by questions.",
+  "The central lesson is the influence of question wording and post-event information."
+);
+
+addQuestion(
+  "Eyewitness memory and context",
+  "A later suggestion changes a witness’s report of an event. This most directly illustrates:",
+  "Misinformation influencing reconstructive memory",
+  "Proof that memory is a perfect recording",
+  "Procedural rehearsal",
+  "A larger short-term span",
+  "Later information can become incorporated into how an event is reported."
+);
+
+addQuestion(
+  "Eyewitness memory and context",
+  "The bank’s proposed process of keeping a distressing recollection outside awareness is termed:",
+  "Repression",
+  "Chunking",
+  "Recognition",
+  "Long-term potentiation",
+  "Repression is the concept named by the bank; a later recollection does not itself prove that mechanism occurred."
+);
+
+addQuestion(
+  "Eyewitness memory and context",
+  "What is the central challenge in evaluating an apparently recovered memory?",
+  "Distinguishing accurate recollection from error or suggestion",
+  "Assuming vividness proves its truth",
+  "Assuming all recovered memories are false",
+  "Treating confidence as independent verification",
+  "Neither a blanket truth claim nor a blanket falsehood claim is justified; independent evidence matters."
+);
+
+addQuestion(
+  "Eyewitness memory and context",
+  "Which statement about culture and memory best fits this guide?",
+  "Cultural practices can influence strategies and how experiences are organized.",
+  "Every culture has exactly the same learning practices.",
+  "Written language guarantees superior recall on every task.",
+  "Different strategies prove an innate ranking of cultures.",
+  "Culture can influence attention, organization, and learning practices; this does not establish a simple ranking of memory ability."
+);
+
+/* Forgetting */
+
+addQuestion(
+  "Forgetting",
+  "Not recalling details of a coin you never examined closely most directly suggests:",
+  "Encoding failure",
+  "Proof of retrograde amnesia",
+  "Perfect storage with guaranteed access",
+  "A primacy advantage",
+  "Repeated exposure is not enough if the relevant details were never attended to and encoded."
+);
+
+addQuestion(
+  "Forgetting",
+  "In the classic Ebbinghaus pattern, forgetting is generally:",
+  "Rapid at first, then slower",
+  "Perfectly constant over time",
+  "Absent until one year has passed",
+  "Slow at first, then always faster",
+  "The classic forgetting curve shows a relatively steep initial decline followed by a slower rate of loss."
+);
+
+addQuestion(
+  "Forgetting",
+  "Which theory proposes weakening memory traces over time?",
+  "Decay",
+  "Recognition",
+  "Chunking",
+  "Source monitoring",
+  "Decay is a theoretical account of trace weakening; it does not explain every instance of forgetting."
+);
+
+addQuestion(
+  "Forgetting",
+  "Other learned information disrupts retrieval of the target information. This is:",
+  "Interference",
+  "Sensory registration",
+  "An engram by definition",
+  "A flashbulb memory",
+  "Interference involves competing learned information affecting retention or access."
+);
+
+addQuestion(
+  "Forgetting",
+  "Old information makes newly learned information harder to recall. This is:",
+  "Proactive interference",
+  "Retroactive interference",
+  "Anterograde amnesia by definition",
+  "Retrograde amnesia by definition",
+  "Proactive interference runs from old information to newer learning or retrieval."
+);
+
+addQuestion(
+  "Forgetting",
+  "Newly learned information makes older information harder to recall. This is:",
+  "Retroactive interference",
+  "Proactive interference",
+  "Source amnesia by definition",
+  "Anterograde amnesia by definition",
+  "Retroactive interference runs from new information back toward older information."
+);
+
+addQuestion(
+  "Forgetting",
+  "Your old password keeps coming to mind when you try to recall the new one. Which explanation best fits?",
+  "Proactive interference",
+  "Retroactive interference",
+  "Iconic memory",
+  "Flashbulb encoding",
+  "The old password is interfering with the new password: old → new."
+);
+
+addQuestion(
+  "Forgetting",
+  "After learning a new address, you struggle to recall your previous address. Which explanation best fits?",
+  "Retroactive interference",
+  "Proactive interference",
+  "Maintenance rehearsal",
+  "An iconic trace",
+  "The newer address interferes with the older one: new → old."
+);
+
+addQuestion(
+  "Forgetting",
+  "You cannot recall a name until someone gives you its first syllable. This most directly illustrates the role of:",
+  "Retrieval cues in access",
+  "Permanent erasure of every trace",
+  "A new motor skill",
+  "Retrograde injury by definition",
+  "The helpful cue supports a retrieval-access explanation; it does not establish that the memory had been erased."
+);
+
+addQuestion(
+  "Forgetting",
+  "Which statement about forgetting is most accurate?",
+  "It has multiple possible causes and can reduce interference from irrelevant information.",
+  "It always proves physical destruction of a memory.",
+  "It is always caused by repression.",
+  "It is identical to anterograde amnesia.",
+  "Encoding failure, retrieval difficulty, interference, and other processes can contribute to forgetting."
+);
+
+/* Memory disorders */
+
+addQuestion(
+  "Memory disorders",
+  "Loss of access to memories from before an injury is called:",
+  "Retrograde amnesia",
+  "Anterograde amnesia",
+  "Retroactive interference",
+  "Proactive interference",
+  "Retrograde refers to memories from before the onset; it is distinct from interference."
+);
+
+addQuestion(
+  "Memory disorders",
+  "Persistent difficulty forming lasting new memories after an injury is called:",
+  "Anterograde amnesia",
+  "Retrograde amnesia",
+  "Proactive interference",
+  "Primacy",
+  "Anterograde amnesia concerns new memory formation after onset."
+);
+
+addQuestion(
+  "Memory disorders",
+  "Which pairing is accurate?",
+  "Retrograde—before onset; anterograde—new learning after onset",
+  "Retrograde—new learning; anterograde—before onset",
+  "Retroactive—loss from injury; proactive—loss from injury",
+  "Source amnesia—every memory is absent",
+  "Keep the time direction for amnesia separate from the old/new competition involved in interference."
+);
+
+addQuestion(
+  "Memory disorders",
+  "A person cannot remember recent experiences but continues to perform a familiar practiced skill. This suggests:",
+  "Different memory systems can be affected differently.",
+  "All memory systems must be identical.",
+  "Procedural performance always proves intact episodic memory.",
+  "The person has no memory of any kind.",
+  "Impaired declarative remembering can coexist with preserved procedural performance."
+);
+
+addQuestion(
+  "Memory disorders",
+  "Which statement about Alzheimer’s disease is most accurate?",
+  "It can progressively affect memory and other cognitive abilities.",
+  "It is simply normal aging in every person.",
+  "It is defined only by forgetting one appointment.",
+  "It is always a short-lived retrieval block.",
+  "Alzheimer’s is a progressive brain disease; occasional forgetting alone does not establish a diagnosis."
+);
+
+addQuestion(
+  "Memory disorders",
+  "Korsakoff’s syndrome is strongly associated with:",
+  "Thiamine deficiency, often in the context of chronic alcohol misuse",
+  "An unusually large iconic memory",
+  "A guarantee of normal executive function",
+  "Temporary forgetting caused only by a missing cue",
+  "Thiamine deficiency is central, and alcohol misuse is a common but not exclusive context."
+);
+
+addQuestion(
+  "Memory disorders",
+  "Why might an evaluation of memory difficulties include language, problem solving, and health history?",
+  "To assess a broader pattern and possible causes rather than rely on one symptom",
+  "To prove every memory complaint is Alzheimer’s disease",
+  "To establish that alcohol history is never relevant",
+  "To show all amnesias are identical",
+  "Different causes can produce different patterns of memory and other cognitive changes; a short symptom list is not enough for diagnosis."
+);
+
+/* Retrieval flashcards */
+
+const cards = [
+  [
+    "Three memory processes",
+    "Encoding → storage → retrieval. Get it in, retain it, get it back."
+  ],
+  [
+    "Three-stage model",
+    "Sensory → short-term → long-term memory."
+  ],
+  [
+    "Iconic vs. echoic",
+    "Iconic = visual. Echoic = auditory."
+  ],
+  [
+    "Short-term estimates in this bank",
+    "About seven items in the traditional digit-span example; roughly 15–25 seconds without rehearsal. These are task-dependent introductory estimates."
+  ],
+  [
+    "Chunking",
+    "Group individual items into meaningful units."
+  ],
+  [
+    "Maintenance vs. elaboration",
+    "Repeat to maintain; organize and connect meaning to elaborate."
+  ],
+  [
+    "Working memory",
+    "Hold information temporarily while actively using or manipulating it."
+  ],
+  [
+    "Primacy vs. recency",
+    "Primacy = first items. Recency = last items, especially at immediate recall."
+  ],
+  [
+    "Explicit / declarative memory",
+    "Conscious recollection of facts and events; includes semantic and episodic forms."
+  ],
+  [
+    "Semantic vs. episodic",
+    "Semantic = general facts and concepts. Episodic = personally experienced events."
+  ],
+  [
+    "Implicit / nondeclarative memory",
+    "Experience influences performance without requiring conscious recollection; includes skills and priming."
+  ],
+  [
+    "Procedural memory",
+    "Learned skills and procedures expressed in performance."
+  ],
+  [
+    "Autobiographical memory",
+    "Memory about your own life; selective, reconstructive, and partly overlapping with episodic memory."
+  ],
+  [
+    "Recall vs. recognition",
+    "Recall = produce an answer. Recognition = identify learned information among supplied material."
+  ],
+  [
+    "Retrieval cue and tip of the tongue",
+    "A cue helps access stored information. Tip of the tongue = feeling of knowing with temporary retrieval difficulty."
+  ],
+  [
+    "Spreading activation vs. priming",
+    "Spreading activation describes activity across related concepts. Priming is an influence of earlier exposure on later performance."
+  ],
+  [
+    "Levels of processing",
+    "Meaning-based analysis and connections generally support more durable retention than surface inspection."
+  ],
+  [
+    "Hippocampus vs. amygdala",
+    "Hippocampus: new declarative memory and spatial memory. Amygdala: emotional significance and emotional learning."
+  ],
+  [
+    "Consolidation, LTP, engram",
+    "Consolidation = stabilize memories. LTP = lasting increase in synaptic effectiveness. Engram = physical memory representation."
+  ],
+  [
+    "Schema and constructive memory",
+    "An organized knowledge framework guides interpretation and can bias what is remembered."
+  ],
+  [
+    "Flashbulb memory and source amnesia",
+    "Flashbulb = vivid circumstances of learning significant news. Source amnesia = forgetting where information came from. Vividness does not ensure accuracy."
+  ],
+  [
+    "Ebbinghaus and forgetting mechanisms",
+    "Classic curve: rapid initial forgetting, then slower loss. Causes can include encoding failure, decay, interference, and cue-dependent access."
+  ],
+  [
+    "Proactive vs. retroactive interference",
+    "Proactive: old → new. Retroactive: new → old. Identify which information does the interfering."
+  ],
+  [
+    "Retrograde vs. anterograde amnesia",
+    "Retrograde = pre-onset memories. Anterograde = difficulty forming lasting new memories after onset."
+  ]
+];
+
+/* Page behavior */
+
+const get = id => document.getElementById(id);
+
+function makeElement(tag, text, className) {
+  const element = document.createElement(tag);
+
+  if (text !== undefined) {
+    element.textContent = text;
+  }
+
+  if (className) {
+    element.className = className;
+  }
+
+  return element;
+}
+
+function shuffle(items) {
+  const result = [...items];
+
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+
+  return result;
+}
+
+get("questionCount").textContent = questions.length;
+
+cards.forEach(([question, answer]) => {
+  const detail = makeElement("details");
+
+  detail.append(
+    makeElement("summary", question),
+    makeElement("p", answer)
+  );
+
+  get("cardContainer").append(detail);
+});
+
+const topics = [
+  ...new Set(questions.map(question => question[0]))
+];
+
+topics.forEach(topic => {
+  const option = makeElement("option", topic);
+  option.value = topic;
+  get("topic").append(option);
+});
+
+let activeQuestions = [];
+let missedQuestions = [];
+let graded = false;
+
+function updateProgress() {
+  const answered =
+    get("quizForm").querySelectorAll("input:checked").length;
+
+  get("progress").textContent =
+    `${answered} of ${activeQuestions.length} answered.` +
+    (graded ? " Attempt graded." : "");
+}
+
+function startAttempt(pool) {
+  activeQuestions = shuffle(pool).map(question => ({
+    source: question,
+    order: shuffle([0, 1, 2, 3])
+  }));
+
+  missedQuestions = [];
+  graded = false;
+
+  get("questionContainer").replaceChildren();
+  get("results").replaceChildren();
+  get("results").hidden = true;
+  get("retryButton").hidden = true;
+  get("gradeButton").disabled = false;
+
+  activeQuestions.forEach((entry, index) => {
+    const [topic, prompt, options] = entry.source;
+    const fieldset = makeElement("fieldset");
+
+    fieldset.append(
+      makeElement("legend", `${index + 1}. ${prompt}`),
+      makeElement("p", topic, "small")
+    );
+
+    entry.order.forEach((originalIndex, displayedIndex) => {
+      const label = makeElement("label", undefined, "option");
+      const input = document.createElement("input");
+
+      input.type = "radio";
+      input.name = `question-${index}`;
+      input.id = `question-${index}-option-${displayedIndex}`;
+      input.value = String(originalIndex);
+
+      input.addEventListener("change", updateProgress);
+
+      label.append(
+        input,
+        makeElement("span", options[originalIndex])
+      );
+
+      fieldset.append(label);
+    });
+
+    get("questionContainer").append(fieldset);
+  });
+
+  updateProgress();
+}
+
+get("startButton").addEventListener("click", () => {
+  const topic = get("topic").value;
+
+  const pool = topic === "all"
+    ? questions
+    : questions.filter(question => question[0] === topic);
+
+  startAttempt(pool);
+});
+
+get("quizForm").addEventListener("submit", event => {
+  event.preventDefault();
+
+  if (graded) {
+    return;
+  }
+
+  const unanswered = activeQuestions.findIndex((entry, index) =>
+    !get("quizForm").querySelector(
+      `input[name="question-${index}"]:checked`
+    )
+  );
+
+  if (unanswered !== -1) {
+    const answered =
+      get("quizForm").querySelectorAll("input:checked").length;
+
+    get("progress").textContent =
+      `Please answer question ${unanswered + 1} before grading. ` +
+      `${answered} of ${activeQuestions.length} answered.`;
+
+    get("quizForm").querySelector(
+      `input[name="question-${unanswered}"]`
+    ).focus();
+
+    return;
+  }
+
+  graded = true;
+
+  let correct = 0;
+  const topicResults = new Map();
+
+  activeQuestions.forEach((entry, index) => {
+    const [
+      topic,
+      prompt,
+      options,
+      answer,
+      explanation
+    ] = entry.source;
+
+    const fieldset =
+      get("questionContainer").children[index];
+
+    const selected = Number(
+      fieldset.querySelector("input:checked").value
+    );
+
+    const isCorrect = selected === answer;
+
+    if (isCorrect) {
+      correct++;
+    } else {
+      missedQuestions.push(entry.source);
+    }
+
+    if (!topicResults.has(topic)) {
+      topicResults.set(topic, {
+        correct: 0,
+        total: 0
+      });
+    }
+
+    const topicScore = topicResults.get(topic);
+    topicScore.total++;
+
+    if (isCorrect) {
+      topicScore.correct++;
+    }
+
+    fieldset.querySelectorAll("input").forEach(input => {
+      input.disabled = true;
+
+      if (Number(input.value) === answer) {
+        input.parentElement.classList.add("correct-choice");
+      } else if (input.checked) {
+        input.parentElement.classList.add("incorrect-choice");
+      }
+    });
+
+    fieldset.append(
+      makeElement(
+        "div",
+        `${isCorrect ? "Correct." : "Review this concept."} ` +
+        `Answer: ${options[answer]}. ${explanation}`,
+        isCorrect
+          ? "feedback"
+          : "feedback incorrect"
+      )
+    );
+  });
+
+  const percentage = Math.round(
+    correct / activeQuestions.length * 100
+  );
+
+  const results = get("results");
+
+  results.append(
+    makeElement(
+      "h3",
+      `${correct} / ${activeQuestions.length} correct • ${percentage}%`
+    ),
+    makeElement(
+      "p",
+      missedQuestions.length
+        ? "Review the explanations and matching guide sections. Explain each correction aloud before retrying."
+        : "Strong work on this attempt. Explain the concepts without notes and revisit them tomorrow."
+    )
+  );
+
+  topicResults.forEach((score, topic) => {
+    const row = makeElement(
+      "div",
+      undefined,
+      "topic-score"
+    );
+
+    row.append(
+      makeElement("span", topic),
+      makeElement(
+        "strong",
+        `${score.correct}/${score.total} ` +
+        `(${Math.round(score.correct / score.total * 100)}%)`
+      )
+    );
+
+    results.append(row);
+  });
+
+  results.hidden = false;
+  get("gradeButton").disabled = true;
+  get("retryButton").hidden =
+    missedQuestions.length === 0;
+
+  updateProgress();
+  results.focus();
+});
+
+get("retryButton").addEventListener("click", () => {
+  const retryPool = [...missedQuestions];
+
+  if (retryPool.length === 0) {
+    return;
+  }
+
+  startAttempt(retryPool);
+
+  get("progress").scrollIntoView({
+    block:"center"
+  });
+});
+
+get("printButton").addEventListener("click", () => {
+  window.print();
+});
+
+startAttempt(questions);
+</script>
+
+</body>
+</html>
